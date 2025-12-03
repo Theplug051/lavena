@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>www.lavenaflorist.mkv &mdash; Prototype</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/rangeslider.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* Minimal modal + cart styles to ensure cart is visible & responsive */
+      .bouquet-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        padding: 20px;
+      }
+      .modal-content {
+        background: #fff;
+        padding: 22px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 520px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .close-modal {
+        float: right;
+        font-size: 22px;
+        cursor: pointer;
+      }
+      .cart-item {
+        padding: 12px;
+        border-radius: 10px;
+        background: #fafafa;
+        margin-bottom: 10px;
+      }
+      .cart-item .cart-item-title {
+        font-weight: 600;
+      }
+      .price-box {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .delivery-row {
+        margin-top: 12px;
+      }
+      .btn-block {
+        display: block;
+        width: 100%;
+      }
+      .qty-controls button {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        line-height: 0;
+      }
+      .border-primary {
+        border: 2px solid #007bff !important;
+      }
+      @media (max-width: 576px) {
+        .modal-content {
+          padding: 18px;
+          max-width: 92%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-wrap">
+      <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+      <header class="site-navbar" role="banner">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-11 col-xl-4">
+              <h1 class="mb-0 site-logo"><a href="index.html" class="text-white mb-0">Lavéna Florist<span class="text-primary">.</span> </a></h1>
+            </div>
+            <div class="col-12 col-md-8 d-none d-xl-block">
+              <nav class="site-navigation position-relative text-right" role="navigation">
+                <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                  <li class="active"><a href="index.html"><span>Home</span></a></li>
+                  <!-- Cart link with visible count -->
+                  <li>
+                    <a href="#" onclick="openCart()">
+                      <span>Cart 🛒 (<span id="cart-count">0</span>)</span>
+                    </a>
+                  </li>
+                 <li><a href="about.html"><span>About</span></a></li>
+                  <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+              <a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- hero -->
+      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-10">
+              <div class="row justify-content-center mb-4">
+                <div class="col-md-10 text-center">
+                  <h1 data-aos="fade-up" class="mb-5">Fresh Blooms for every occasion  <span class="typed-words"></span></h1>
+                  <p data-aos="fade-up" data-aos-delay="100"><a href="#" class="btn btn-primary btn-pill">Shop Here</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- quick info -->
+      <div class="block-quick-info-2">
+        <div class="container">
+          <div class="block-quick-info-2-inner">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-truck mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">Delivery</strong>
+                    <span class="excerpt">Same day delivery to places within JHB|PTA radius</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-whatsapp mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">Call us today</strong>
+                    <span class="excerpt"><a href="#">060 604 5979</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-envelope mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">e•mail us</strong>
+                    <span class="excerpt"><a href="#">lavenag002@gmail.com</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-clock-o mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">Opening hours</strong>
+                    <span class="excerpt">Mon-Fri 7:AM - 5PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end quick info -->
+
+      <!-- products (kept) -->
+      <div class="block-services-1 py-5">
+        <div class="container">
+          <h3 class="mb-4">Our Bouquets</h3>
+          <p>Browse our selection of handcrafted floral arrangements. Swipe to explore!</p>
+
+<!-- START: Cleaned bouquet carousels (3 rows) -->
+<!-- ROW 1 -->
+<div class="owl-carousel bouquet-slider">
+  <div class="bouquet-card" onclick="openProductModal('Red Roses Classic','A beautiful bouquet made with fresh roses.',350,'images/bouquet1.jpg')">
+    <img src="images/bouquet1.jpg" alt="Red Roses Classic" />
+    <h4>Red Roses Classic</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Pink Love Box','Pink roses arranged in a premium box.',420,'images/bouquet2.jpg')">
+    <img src="images/bouquet2.jpg" alt="Pink Love Box" />
+    <h4>Pink Love Box</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Sunshine Bouquet','Bright yellow blooms for any occasion.',320,'images/bouquet3.jpg')">
+    <img src="images/bouquet3.jpg" alt="Sunshine Bouquet" />
+    <h4>Sunshine Bouquet</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Elegant White Mix','A clean white floral arrangement.',380,'images/bouquet4.jpg')">
+    <img src="images/bouquet4.jpg" alt="Elegant White Mix" />
+    <h4>Elegant White Mix</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Bright Summer Mix','A colourful mixed bouquet.',390,'images/bouquet5.jpg')">
+    <img src="images/bouquet5.jpg" alt="Bright Summer Mix" />
+    <h4>Bright Summer Mix</h4>
+  </div>
+</div>
+
+<!-- ROW 2 -->
+<div class="owl-carousel bouquet-slider mt-4">
+  <div class="bouquet-card" onclick="openProductModal('Golden Blooms','A bright mix of yellow and gold flowers.',320,'images/bouquet7.jpg')">
+    <img src="images/bouquet7.jpg" alt="Golden Blooms" />
+    <h4>Golden Blooms</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Romantic Heart Box','Heart-shaped luxury box with roses.',450,'images/bouquet6.jpg')">
+    <img src="images/bouquet6.jpg" alt="Romantic Heart Box" />
+    <h4>Romantic Heart Box</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Soft Pastel Roses','Soft pink pastel roses for a gentle touch.',380,'images/bouquet8.jpg')">
+    <img src="images/bouquet8.jpg" alt="Soft Pastel Roses" />
+    <h4>Soft Pastel Roses</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Lavender Dream','Lavender-inspired purple floral arrangement.',350,'images/bouquet9.jpg')">
+    <img src="images/bouquet9.jpg" alt="Lavender Dream" />
+    <h4>Lavender Dream</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Deluxe Tulip Set','Premium tulip selection in assorted colours.',420,'images/bouquet10.jpg')">
+    <img src="images/bouquet10.jpg" alt="Deluxe Tulip Set" />
+    <h4>Deluxe Tulip Set</h4>
+  </div>
+</div>
+
+<!-- ROW 3 -->
+<div class="owl-carousel bouquet-slider mt-4">
+  <div class="bouquet-card" onclick="openProductModal('Celebration Mix','A bright mixed arrangement for celebrations.',360,'images/bouquet11.jpg')">
+    <img src="images/bouquet11.jpg" alt="Celebration Mix" />
+    <h4>Celebration Mix</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('White Orchid Beauty','Elegant orchid-inspired bouquet.',480,'images/bouquet12.jpg')">
+    <img src="images/bouquet12.jpg" alt="White Orchid Beauty" />
+    <h4>White Orchid Beauty</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Rose + Chocolate Combo','Perfect romantic combo gift.',520,'images/bouquet13.jpg')">
+    <img src="images/bouquet13.jpg" alt="Rose + Chocolate Combo" />
+    <h4>Rose + Chocolate Combo</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Blossom Jar','A cute jar arrangement ideal for desks.',220,'images/bouquet14.jpg')">
+    <img src="images/bouquet14.jpg" alt="Blossom Jar" />
+    <h4>Blossom Jar</h4>
+  </div>
+
+  <div class="bouquet-card" onclick="openProductModal('Petite Love Bag','Small but elegant floral gift bag.',250,'images/bouquet15.jpg')">
+    <img src="images/bouquet15.jpg" alt="Petite Love Bag" />
+    <h4>Petite Love Bag</h4>
+  </div>
+</div>
+<!-- END: Cleaned bouquet carousels -->
+        </div>
+      </div>
+
+      <!-- =======================
+       BUILD YOUR OWN BOUQUET (REPLACED WITH GRID + QTY CONTROLS)
+      ======================== -->
+      <div class="site-section bg-light" id="build-bouquet">
+        <div class="container">
+          <div class="row mb-5 text-center">
+            <div class="col-md-12">
+              <h2 class="site-section-heading font-secondary">Build Your Own Bouquet</h2>
+              <p class="lead">Choose flowers, set stems, choose size, add finishing touches — price updates live.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Flowers grid with qty controls -->
+              <h3 class="step-title"><span class="icon-local_florist icon"></span> Step 1: Pick Your Flowers (set stems)</h3>
+              <div class="row" id="flowers-grid">
+                <div class="col-6 col-md-4 mb-3 flower-item" data-price="30" data-name="Roses">
+                  <div class="card p-2 text-center">
+                    <img src="images/stem1.jpg" class="img-fluid mb-2" style="height:100px; object-fit:contain;" />
+                    <h5 class="mb-1">Roses</h5>
+                    <div class="small text-muted mb-2">R30 per stem</div>
+                    <div class="d-flex justify-content-center align-items-center qty-controls">
+                      <button class="btn btn-sm btn-outline-secondary" data-action="decrement">−</button>
+                      <div class="mx-2 qty-value" style="min-width:32px; text-align:center;">0</div>
+                      <button class="btn btn-sm btn-outline-secondary" data-action="increment">+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-3 flower-item" data-price="20" data-name="Tulips">
+                  <div class="card p-2 text-center">
+                    <img src="images/stem2.jpg" class="img-fluid mb-2" style="height:100px; object-fit:contain;" />
+                    <h5 class="mb-1">Tulips</h5>
+                    <div class="small text-muted mb-2">R20 per stem</div>
+                    <div class="d-flex justify-content-center align-items-center qty-controls">
+                      <button class="btn btn-sm btn-outline-secondary" data-action="decrement">−</button>
+                      <div class="mx-2 qty-value" style="min-width:32px; text-align:center;">0</div>
+                      <button class="btn btn-sm btn-outline-secondary" data-action="increment">+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-3 flower-item" data-price="25" data-name="Lilies">
+                  <div class="card p-2 text-center">
+                    <img src="images/stem3.jpg" class="img-fluid mb-2" style="height:100px; object-fit:contain;" />
+                    <h5 class="mb-1">Lilies</h5>
+                    <div class="small text-muted mb-2">R25 per stem</div>
+                    <div class="d-flex justify-content-center align-items-center qty-controls">
+                      <button class="btn btn-sm btn-outline-secondary" data-action="decrement">−</button>
+                      <div class="mx-2 qty-value" style="min-width:32px; text-align:center;">0</div>
+                      <button class="btn btn-sm btn-outline-secondary" data-action="increment">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Size -->
+              <h3 class="step-title mt-4"><span class="icon-resize_small icon"></span> Step 2: Bouquet Size</h3>
+              <div class="row" id="sizes-grid">
+                <div class="col-4">
+                  <div class="card p-2 text-center size-card" data-price="60" data-name="Small" role="button">
+                    <img src="images/small.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Small</h5>
+                    <div class="small text-muted">+ R60 base</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center size-card" data-price="120" data-name="Medium" role="button">
+                    <img src="images/medium.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Medium</h5>
+                    <div class="small text-muted">+ R120 base</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center size-card" data-price="200" data-name="Large" role="button">
+                    <img src="images/large.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Large</h5>
+                    <div class="small text-muted">+ R200 base</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Finish -->
+              <h3 class="step-title mt-4"><span class="icon-star icon"></span> Step 3: Add Finishing Touches</h3>
+              <div class="row" id="finish-grid">
+                <div class="col-4">
+                  <div class="card p-2 text-center finish-card" data-price="25" data-name="Ribbon Wrap" role="button">
+                    <img src="images/ribbon.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Ribbon Wrap</h5>
+                    <div class="small text-muted">+ R25</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center finish-card" data-price="40" data-name="Luxury Paper" role="button">
+                    <img src="images/lux_paper.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Luxury Paper</h5>
+                    <div class="small text-muted">+ R40</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center finish-card" data-price="50" data-name="Gift Bag" role="button">
+                    <img src="images/gift_bag.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Gift Bag</h5>
+                    <div class="small text-muted">+ R50</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: preview + actions -->
+            <div class="col-md-4">
+              <div class="p-3 border rounded sticky-top" style="top:100px;">
+                <h4>Your Bouquet Preview</h4>
+                <div class="mb-2 small text-muted" id="bouquet-summary-brief">No stems selected yet.</div>
+                <div class="price-box mb-3">R<span id="bouquet-total">0</span></div>
+
+                <div class="form-group">
+                  <label for="bouquet-note"><strong>Add a short note (optional)</strong></label>
+                  <textarea id="bouquet-note" class="form-control" rows="3" placeholder="E.g. 'Please include a small card: Happy Birthday'"></textarea>
+                </div>
+
+                <button id="btn-add-bouquet" class="btn btn-primary btn-block mt-2">Add to Cart</button>
+                <button id="btn-order-whatsapp" class="btn btn-success btn-block mt-2">Order on WhatsApp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+            <!-- remaining sections & footer (kept) -->
+      <div class="mt-5 block-cta-1 primary-overlay" style="background-image: url('images/hero_bg_2.png')">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+              <h2 class="mb-3 mt-0 text-white">Refer a friend, both get 10% off next order, use code LOVE10. </h2>
+              <p class="mb-0 text-white lead">Refer your friends and family to Lavéna Florist and get rewarded with a 10% discount on your next order!</p>
+            </div>
+            <div class="col-lg-4">
+              <p class="mb-0"><a href="contact.html" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Quick Links</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Products</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Features</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Follow Us</h2><a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" class="pl-0 pr-3">
+  <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12.5 2c.7 4.3 3.3 6.5 7 6.8v3.7c-2.1.2-3.9-.5-5.7-1.8v6.7c0 6-6.5 7.9-9.6 4.1-2-2.5-1.4-7 2.2-8.6 1-.5 2.1-.7 3.4-.6v3.8c-.7-.1-1.4 0-2 .3-1.9 1-1.7 3.6.3 4.3 2.1.7 3.9-.9 3.9-3.1V2h.5z"/>
+  </svg>
+</a>
+                  <a href="https://www.instagram.com/lavena_florist?igsh=MXhtYTJ5ZW8wMzkwbQ==" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+              <p>Experience floral elegance delivered monthly. Join our list for curated updates, exclusive previews, and special member benefits.
+</p>
+              <form action="#" method="post" class="subscription">
+                <div class="input-group mb-3 d-flex align-items-stretch">
+                  <input type="text" class="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2" />
+                  <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row pt-5 mt-5">
+            <div class="col-12 text-md-center text-left">
+              <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by Mzimkhulu Kreatives <i class="icon icon-gift" aria-hidden="true"></i> For Lavena Florist</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bouquet Summary Modal -->
+    <div id="bouquetModal" class="bouquet-modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeBouquetBuilder()">&times;</span>
+        <h2>Your Bouquet Summary</h2>
+        <p><strong>Flowers:</strong> <span id="summary-flowers"></span></p>
+        <p><strong>Size:</strong> <span id="summary-size"></span></p>
+        <p><strong>Finishing Touch:</strong> <span id="summary-finish"></span></p>
+        <h3>Total: R<span id="summary-total"></span></h3>
+
+        <a id="whatsappLink" class="btn btn-success btn-pill btn-block mt-4" target="_blank">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Product View Modal -->
+    <div id="productModal" class="bouquet-modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeProductModal()">&times;</span>
+
+        <img id="product-image" src="" class="img-fluid mb-3" style="border-radius:12px;" />
+
+        <h2 id="product-title"></h2>
+        <p id="product-description" class="mb-4"></p>
+
+        <h3 class="mb-3">Price: R<span id="product-price"></span></h3>
+
+        <button class="btn btn-primary btn-pill btn-block mt-3" onclick="addToCartFromModal()">Add to Cart</button>
+
+        <a id="productWhatsAppLink" class="btn btn-success btn-pill btn-block mt-3" target="_blank">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Cart Modal (with Delivery dropdown) -->
+    <div id="cartModal" class="bouquet-modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeCart()">&times;</span>
+
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+
+        <div class="delivery-row">
+          <label for="delivery-area"><strong>Delivery Area:</strong></label>
+          <select id="delivery-area" onchange="updateDeliveryFee()" class="form-control mb-2">
+            <option value="0">Self Collection (Free)</option>
+            <option value="80">Pretoria – R80</option>
+            <option value="100">Johannesburg South – R100</option>
+            <option value="120">Johannesburg North – R120</option>
+          </select>
+
+          <label for="delivery-address"><strong>Delivery Address (optional):</strong></label>
+          <input id="delivery-address" class="form-control mb-2" placeholder="Enter delivery address (optional)" />
+        </div>
+
+        <h3 class="mt-3">Total: R<span id="cart-total">0</span></h3>
+
+        <a id="cartWhatsappLink" class="btn btn-success btn-pill btn-block mt-4" target="_blank">Checkout on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- jQuery + plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/typed.js"></script>
+
+    <script>
+      var typed = new Typed('.typed-words', {
+        strings: ["Birthday", "Anniversary", "Graduation", " Wedding", "Valentine's Day", "Get Well Soon", "I 💓 You"],
+        typeSpeed: 80,
+        backSpeed: 80,
+        backDelay: 4000,
+        startDelay: 1000,
+        loop: true,
+        showCursor: true
+      });
+    </script>
+
+    <!-- Keep your original main.js (if used) -->
+    <script src="js/main.js"></script>
+
+    <!-- Owl init -->
+    <script>
+      $('.bouquet-slider').owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        responsive:{
+          0:{ items:2 },
+          600:{ items:3 },
+          1000:{ items:4 }
+        }
+      });
+    </script>
+
+    <!-- Cart & Product scripts (single merged definitions) -->
+    <script>
+      // Cart data + product modal
+      let cart = [];
+      let currentProduct = {};
+      let deliveryFee = 0; // default delivery fee (updated by dropdown)
+
+      function openProductModal(title, description, price, image) {
+        currentProduct = { title, description, price: parseInt(price), image };
+
+        document.getElementById("product-title").innerText = title;
+        document.getElementById("product-description").innerText = description;
+        document.getElementById("product-price").innerText = price;
+        document.getElementById("product-image").src = image;
+
+        let whatsappNumber = "27606045979";
+        let message = `Hello! I'm interested in:\n${title}\nPrice: R${price}`;
+        document.getElementById("productWhatsAppLink").href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        document.getElementById("productModal").style.display = "flex";
+      }
+
+      function closeProductModal() {
+        document.getElementById("productModal").style.display = "none";
+      }
+
+      function addToCartFromModal() {
+        if (!currentProduct || !currentProduct.title) {
+          alert("No product selected");
+          return;
+        }
+        cart.push(Object.assign({}, currentProduct));
+        updateCartCount();
+        closeProductModal();
+        alert("Added to cart!");
+      }
+
+      function updateCartCount() {
+        const el = document.getElementById("cart-count");
+        if (el) el.innerText = cart.length;
+      }
+
+      function updateDeliveryFee() {
+        const sel = document.getElementById("delivery-area");
+        deliveryFee = sel ? parseInt(sel.value || 0) : 0;
+        if (document.getElementById("cartModal").style.display === "flex") {
+          renderCart();
+        }
+      }
+
+      function openCart() {
+        renderCart();
+        document.getElementById("cartModal").style.display = "flex";
+      }
+
+      function renderCart() {
+        let itemsHtml = "";
+        let total = 0;
+
+        if (cart.length === 0) {
+          itemsHtml = `<p>Your cart is empty. Browse our bouquets to add something lovely!</p>`;
+        } else {
+          cart.forEach((item, index) => {
+            total += parseInt(item.price || 0);
+            itemsHtml += `
+              <div class="cart-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <p class="cart-item-title">${item.title}</p>
+                    <p class="small text-muted mb-0">R${item.price}</p>
+                    <p class="small text-muted mb-0">${item.description || ''}</p>
+                  </div>
+                  <div>
+                    <button onclick="removeCartItem(${index})" class="btn btn-outline-danger btn-sm">Remove</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+        }
+
+        document.getElementById("cart-items").innerHTML = itemsHtml;
+
+        let finalTotal = total + (parseInt(deliveryFee) || 0);
+        document.getElementById("cart-total").innerText = finalTotal;
+
+        let message = "Hello! I'd like to order the following:\n\n";
+
+cart.forEach((item) => {
+  message += `• ${item.title} - R${item.price}\n`;
+});
+
+message += `\nDelivery Fee: R${deliveryFee}\n`;
+
+const address = document.getElementById("delivery-address").value || "";
+if (address) {
+  message += `Delivery Address: ${address}\n`;
+}
+
+message += `Total: R${finalTotal}`;
+
+        document.getElementById("cartWhatsappLink").href = `https://wa.me/27606045979?text=${encodeURIComponent(message)}`;
+      }
+
+      function closeCart() {
+        document.getElementById("cartModal").style.display = "none";
+      }
+
+      function removeCartItem(index) {
+        if (index > -1 && index < cart.length) {
+          cart.splice(index, 1);
+          updateCartCount();
+          renderCart();
+        }
+      }
+
+      // Ensure cart count accurate on load
+      updateCartCount();
+    </script>
+
+    <!-- Bouquet builder (Option B) -->
+    <script>
+      /* ===== Bouquet Builder (Option B - multi-stem quantities) ===== */
+
+      const bouquetState = {
+        flowers: [], // {name, price, qty}
+        size: null, // {name, price}
+        finish: null, // {name, price}
+        note: ""
+      };
+
+      function initBouquetBuilder() {
+        // initialize flowers array and wire qty controls
+        const flowerItems = Array.from(document.querySelectorAll("#flowers-grid .flower-item"));
+        flowerItems.forEach((item, idx) => {
+          const price = parseInt(item.dataset.price || 0);
+          const name = item.dataset.name || "";
+          bouquetState.flowers.push({ name, price, qty: 0 });
+
+          const qtyEl = item.querySelector(".qty-value");
+          qtyEl.innerText = "0";
+
+          item.querySelectorAll("[data-action]").forEach(btn => {
+            btn.addEventListener("click", () => {
+              if (btn.dataset.action === "increment") {
+                bouquetState.flowers[idx].qty = Math.min(50, bouquetState.flowers[idx].qty + 1);
+              } else {
+                bouquetState.flowers[idx].qty = Math.max(0, bouquetState.flowers[idx].qty - 1);
+              }
+              qtyEl.innerText = bouquetState.flowers[idx].qty;
+              updateBouquetPreview();
+            });
+          });
+        });
+
+        // sizes single select
+        document.querySelectorAll("#sizes-grid .size-card").forEach(card => {
+          card.addEventListener("click", () => {
+            document.querySelectorAll("#sizes-grid .size-card").forEach(c => c.classList.remove("border-primary"));
+            card.classList.add("border-primary");
+            bouquetState.size = { name: card.dataset.name, price: parseInt(card.dataset.price || 0) };
+            updateBouquetPreview();
+          });
+        });
+
+        // finish single select
+        document.querySelectorAll("#finish-grid .finish-card").forEach(card => {
+          card.addEventListener("click", () => {
+            document.querySelectorAll("#finish-grid .finish-card").forEach(c => c.classList.remove("border-primary"));
+            card.classList.add("border-primary");
+            bouquetState.finish = { name: card.dataset.name, price: parseInt(card.dataset.price || 0) };
+            updateBouquetPreview();
+          });
+        });
+
+        // note
+        const noteEl = document.getElementById("bouquet-note");
+        if (noteEl) {
+          noteEl.addEventListener("input", (e) => {
+            bouquetState.note = e.target.value;
+          });
+        }
+
+        // buttons
+        const addBtn = document.getElementById("btn-add-bouquet");
+        if (addBtn) addBtn.addEventListener("click", handleAddBouquetToCart);
+
+        const orderBtn = document.getElementById("btn-order-whatsapp");
+        if (orderBtn) orderBtn.addEventListener("click", handleOrderBouquetWhatsApp);
+
+        updateBouquetPreview();
+      }
+
+      function updateBouquetPreview() {
+        let stemsSummary = [];
+        let stemTotal = 0;
+        bouquetState.flowers.forEach(f => {
+          if (f.qty > 0) {
+            stemsSummary.push(`${f.name} x${f.qty}`);
+            stemTotal += f.price * f.qty;
+          }
+        });
+
+        const sizePrice = bouquetState.size ? bouquetState.size.price : 0;
+        const finishPrice = bouquetState.finish ? bouquetState.finish.price : 0;
+        const total = stemTotal + sizePrice + finishPrice;
+
+        document.getElementById("bouquet-total").innerText = total;
+
+        const brief = stemsSummary.length > 0 ? stemsSummary.join(", ") : "No stems selected yet.";
+        const sizeText = bouquetState.size ? ` • Size: ${bouquetState.size.name}` : "";
+        const finishText = bouquetState.finish ? ` • Finish: ${bouquetState.finish.name}` : "";
+        document.getElementById("bouquet-summary-brief").innerText = brief + sizeText + finishText;
+      }
+
+      function handleAddBouquetToCart() {
+        const totalStems = bouquetState.flowers.reduce((s, f) => s + f.qty, 0);
+        if (totalStems === 0) {
+          alert("Please add at least one stem to your bouquet.");
+          return;
+        }
+
+        const parts = [];
+        bouquetState.flowers.forEach(f => { if (f.qty > 0) parts.push(`${f.name} x${f.qty}`); });
+
+        const title = `Custom Bouquet — ${parts.slice(0, 4).join(", ")}${parts.length > 4 ? "..." : ""}`;
+        let description = parts.join(", ");
+        if (bouquetState.size) description += ` • Size: ${bouquetState.size.name}`;
+        if (bouquetState.finish) description += ` • Finish: ${bouquetState.finish.name}`;
+        if (bouquetState.note) description += ` • Note: ${bouquetState.note}`;
+
+        const stemTotal = bouquetState.flowers.reduce((s, f) => s + (f.qty * f.price), 0);
+        const sizePrice = bouquetState.size ? bouquetState.size.price : 0;
+        const finishPrice = bouquetState.finish ? bouquetState.finish.price : 0;
+        const price = stemTotal + sizePrice + finishPrice;
+
+        cart.push({
+          title,
+          description,
+          price,
+          image: "images/bouquet_custom.jpg"
+        });
+
+        if (typeof updateCartCount === "function") updateCartCount();
+
+        alert("Custom bouquet added to cart!");
+
+        // reset builder for fresh start
+        resetBouquetBuilder();
+      }
+
+      function handleOrderBouquetWhatsApp() {
+        const totalStems = bouquetState.flowers.reduce((s, f) => s + f.qty, 0);
+        if (totalStems === 0) {
+          alert("Please add at least one stem to your bouquet.");
+          return;
+        }
+
+        let msg = "Hello! I'd like to order a custom bouquet:%0A%0A";
+        bouquetState.flowers.forEach(f => {
+          if (f.qty > 0) msg += `• ${f.name} x${f.qty}%0A`;
+        });
+        if (bouquetState.size) msg += `%0ASize: ${bouquetState.size.name}%0A`;
+        if (bouquetState.finish) msg += `%0AFinish: ${bouquetState.finish.name}%0A`;
+        if (bouquetState.note) msg += `%0ANote: ${encodeURIComponent(bouquetState.note)}%0A`;
+
+        const stemTotal = bouquetState.flowers.reduce((s, f) => s + (f.qty * f.price), 0);
+        const sizePrice = bouquetState.size ? bouquetState.size.price : 0;
+        const finishPrice = bouquetState.finish ? bouquetState.finish.price : 0;
+        const total = stemTotal + sizePrice + finishPrice;
+        msg += `%0ATotal: R${total}`;
+
+        const wa = `https://wa.me/27606045979?text=${msg}`;
+        window.open(wa, "_blank");
+      }
+
+      function resetBouquetBuilder() {
+        bouquetState.flowers.forEach(f => f.qty = 0);
+        bouquetState.size = null;
+        bouquetState.finish = null;
+        bouquetState.note = "";
+        document.querySelectorAll("#flowers-grid .qty-value").forEach(el => el.innerText = "0");
+        document.getElementById("bouquet-note").value = "";
+        document.querySelectorAll("#sizes-grid .size-card, #finish-grid .finish-card").forEach(c => c.classList.remove("border-primary"));
+        updateBouquetPreview();
+      }
+
+      // start builder after DOM ready
+      document.addEventListener("DOMContentLoaded", () => {
+        initBouquetBuilder();
+      });
+    </script>
+  </body>
+</html>
