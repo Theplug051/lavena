@@ -12,11 +12,6 @@
   </url>
 
   <url>
-    <loc>https://theplug051.github.io/lavena/index.html</loc>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
     <loc>https://theplug051.github.io/lavena/contact.html</loc>
     <priority>0.70</priority>
   </url>
