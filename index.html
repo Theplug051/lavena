@@ -100,9 +100,30 @@
           max-width: 92%;
         }
       }
-      
-      /* Force navigation to show on tablets in portrait mode */
-@media (min-width: 768px) {
+      /* Improved navigation for tablets in portrait mode */
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-navbar .site-navigation {
+    display: block !important;
+  }
+  
+  .site-navbar .site-menu {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .site-navbar .site-menu > li > a > span {
+    padding: 5px 12px !important;
+    font-size: 14px;
+  }
+  
+  .site-menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
   .site-navbar .site-navigation {
     display: block !important;
   }
