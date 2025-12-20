@@ -100,29 +100,48 @@
           max-width: 92%;
         }
       }
-      /* Improved navigation for tablets in portrait mode */
+      
+      /* Force better navigation styling for all screen sizes */
+
+/* Tablets in portrait mode (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .site-navbar .site-navigation {
     display: block !important;
   }
   
-  .site-navbar .site-menu {
+  .site-navbar .site-navigation .site-menu {
     display: flex !important;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 5px;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    margin: 0 !important;
   }
   
-  .site-navbar .site-menu > li > a > span {
-    padding: 5px 12px !important;
-    font-size: 14px;
+  .site-navbar .site-navigation .site-menu > li {
+    display: inline-block !important;
+    margin: 0 2px !important;
+  }
+  
+  .site-navbar .site-navigation .site-menu > li > a {
+    padding: 5px 10px !important;
+    font-size: 13px !important;
+  }
+  
+  .site-navbar .site-navigation .site-menu > li > a > span {
+    padding: 3px 8px !important;
+    font-size: 13px !important;
   }
   
   .site-menu-toggle {
     display: none !important;
   }
+  
+  .d-inline-block.d-md-none {
+    display: none !important;
+  }
 }
 
+/* Larger screens (992px+) */
 @media (min-width: 992px) {
   .site-navbar .site-navigation {
     display: block !important;
@@ -137,8 +156,13 @@
   }
 }
 
+/* Phone screens only (below 768px) */
 @media (max-width: 767px) {
   .site-navbar .site-navigation {
+    display: none !important;
+  }
+  
+  .site-navbar .col-12.col-md-8 {
     display: none !important;
   }
   
