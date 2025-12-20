@@ -101,35 +101,37 @@
         }
       }
       
-      /* Force better navigation styling for all screen sizes */
+      /* Navigation styling - buttons aligned to top right */
 
 /* Tablets in portrait mode (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .site-navbar .site-navigation {
     display: block !important;
+    text-align: right !important;
   }
   
   .site-navbar .site-navigation .site-menu {
-    display: flex !important;
+    display: inline-flex !important;
     flex-direction: row !important;
     justify-content: flex-end !important;
     align-items: center !important;
     margin: 0 !important;
+    float: right !important;
   }
   
   .site-navbar .site-navigation .site-menu > li {
     display: inline-block !important;
-    margin: 0 2px !important;
+    margin: 0 3px !important;
   }
   
   .site-navbar .site-navigation .site-menu > li > a {
-    padding: 5px 10px !important;
-    font-size: 13px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
   }
   
   .site-navbar .site-navigation .site-menu > li > a > span {
-    padding: 3px 8px !important;
-    font-size: 13px !important;
+    padding: 4px 10px !important;
+    font-size: 14px !important;
   }
   
   .site-menu-toggle {
@@ -138,6 +140,11 @@
   
   .d-inline-block.d-md-none {
     display: none !important;
+  }
+  
+  /* Ensure the navigation column takes proper width */
+  .site-navbar .col-md-8 {
+    text-align: right !important;
   }
 }
 
