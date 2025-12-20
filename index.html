@@ -100,6 +100,31 @@
           max-width: 92%;
         }
       }
+      
+      /* Force navigation to show on tablets in portrait mode */
+@media (min-width: 768px) {
+  .site-navbar .site-navigation {
+    display: block !important;
+  }
+  
+  .site-navbar .site-menu {
+    display: block !important;
+  }
+  
+  .site-menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-navbar .site-navigation {
+    display: none !important;
+  }
+  
+  .site-menu-toggle {
+    display: inline-block !important;
+  }
+}
     </style>
   </head>
 
