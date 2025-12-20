@@ -910,5 +910,26 @@ message += `Total: R${finalTotal}`;
         initBouquetBuilder();
       });
     </script>
+    <script>
+// Force mobile menu to work on GitHub Pages
+document.addEventListener('DOMContentLoaded', function() {
+  var menuToggle = document.querySelector('.js-menu-toggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.toggle('offcanvas-menu');
+    });
+  }
+  
+  // Close button functionality
+  var closeButton = document.querySelector('.js-menu-toggle.icon-close2');
+  if (closeButton) {
+    closeButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.remove('offcanvas-menu');
+    });
+  }
+});
+    </script>
   </body>
 </html>
