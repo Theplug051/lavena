@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavena Florist — Fresh Flowers, Bouquets & Flower Delivery</title>
+
+<meta name="description" content="Lavena Florist offers fresh flowers, beautiful bouquets, custom arrangements, and reliable flower delivery. Perfect for birthdays, weddings, funerals, anniversaries, and special occasions.">
+
+<meta name="keywords" content="Lavena Florist, florist, flowers, flower delivery, bouquets, roses, weddings, anniversaries, funerals, South Africa florist, online florist">
+
+<meta name="author" content="Lavena Florist">
+
+<!-- OpenGraph for social / Google -->
+<meta property="og:title" content="Lavena Florist — Fresh Flowers & Stunning Bouquets">
+<meta property="og:description" content="Order fresh flowers, bouquets, and custom floral arrangements. Fast delivery and beautiful designs.">
+<meta property="og:image" content="https://theplug051.github.io/lavena//images/cover.jpg">
+<meta property="og:url" content="https://theplug051.github.io/lavena/">
+<meta property="og:type" content="website">
+
+<!-- Mobile friendly -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/rangeslider.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+
+  </head>
+
+  <body>
+
+<header>
+  <div class="nav-bar">
+    <div class="site-logo">
+      <a href="#home"><img src="images/logo/lavena_logo.png" alt="Lavena Logo"></a>
+    </div>
+
+    <div class="hamburger" id="hamburger-icon">
+      <span></span><span></span><span></span>
+    </div>
+
+   <div class="header-cart" id="cart-icon-trigger" onclick="openCart()" style="cursor: pointer;">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="20" cy="21" r="1"></circle>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  </svg>
+  <span class="cart-count" id="cart-count">0</span>
+</div>
+
+  </div>
+
+<div class="nav-menu" id="nav-menu">
+  <a href="index.html">Home</a>
+  <a href="faq.html">FAQ</a> 
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart">&times;</button>
+    </div>
+    <div class="cart-items">
+      <p>Your cart is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cart-overlay"></div>
+</header>
+
+
+
+
+      <!-- hero -->
+      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-10">
+              <div class="row justify-content-center mb-4">
+                <div class="col-md-10 text-center">
+                  <h1 data-aos="fade-up" class="mb-5">Fresh Blooms for every occasion  <span class="typed-words"></span></h1>
+                  <p data-aos="fade-up" data-aos-delay="100"><a href="#" class="btn btn-primary btn-pill">Shop Here</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- quick info -->
+      <div class="block-quick-info-2">
+        <div class="container">
+          <div class="block-quick-info-2-inner">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-truck mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">Delivery</strong>
+                    <span class="excerpt">Same day delivery to places within JHB|PTA radius</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-whatsapp mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">Call us today</strong>
+                    <span class="excerpt"><a href="#">060 604 5979</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-envelope mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">e•mail us</strong>
+                    <span class="excerpt"><a href="#">lavenag002@gmail.com</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="d-flex quick-info-2">
+                  <span class="icon icon-clock-o mr-3"></span>
+                  <div class="text">
+                    <strong class="d-block heading">Opening hours</strong>
+                    <span class="excerpt">Mon-Fri 7:AM - 5PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end quick info -->
+
+<div class="block-services-1 py-5">
+  <div class="container">
+    <h3 class="mb-4">Our Bouquets</h3>
+    <p>Browse our selection of handcrafted floral arrangements. Swipe to explore!</p>
+
+    <div class="owl-carousel bouquet-slider">
+      <div class="bouquet-card" onclick="openProductModal('Red Roses Classic','A beautiful bouquet made with fresh roses.',350,'images/bouquet1.jpg')">
+        <img src="images/bouquet1.jpg" alt="Red Roses Classic" />
+        <h4>Red Roses Classic</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Pink Love Box','Pink roses arranged in a premium box.',420,'images/bouquet2.jpg')">
+        <img src="images/bouquet2.jpg" alt="Pink Love Box" />
+        <h4>Pink Love Box</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Sunshine Bouquet','Bright yellow blooms for any occasion.',320,'images/bouquet3.jpg')">
+        <img src="images/bouquet3.jpg" alt="Sunshine Bouquet" />
+        <h4>Sunshine Bouquet</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Elegant White Mix','A clean white floral arrangement.',380,'images/bouquet4.jpg')">
+        <img src="images/bouquet4.jpg" alt="Elegant White Mix" />
+        <h4>Elegant White Mix</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Bright Summer Mix','A colourful mixed bouquet.',390,'images/bouquet5.jpg')">
+        <img src="images/bouquet5.jpg" alt="Bright Summer Mix" />
+        <h4>Bright Summer Mix</h4>
+      </div>
+    </div>
+
+    <div class="owl-carousel bouquet-slider mt-4">
+      <div class="bouquet-card" onclick="openProductModal('Golden Blooms','A bright mix of yellow and gold flowers.',320,'images/bouquet7.jpg')">
+        <img src="images/bouquet7.jpg" alt="Golden Blooms" />
+        <h4>Golden Blooms</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Romantic Heart Box','Heart-shaped luxury box with roses.',450,'images/bouquet6.jpg')">
+        <img src="images/bouquet6.jpg" alt="Romantic Heart Box" />
+        <h4>Romantic Heart Box</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Soft Pastel Roses','Soft pink pastel roses for a gentle touch.',380,'images/bouquet8.jpg')">
+        <img src="images/bouquet8.jpg" alt="Soft Pastel Roses" />
+        <h4>Soft Pastel Roses</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Lavender Dream','Lavender-inspired purple floral arrangement.',350,'images/bouquet9.jpg')">
+        <img src="images/bouquet9.jpg" alt="Lavender Dream" />
+        <h4>Lavender Dream</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Dinheiro Blooms: The Rosa Edition','Premium Dinheiro selection in assorted colours.',420,'images/bouquet10.jpg')">
+        <img src="images/bouquet10.jpg" alt="Dinheiro Blooms: The "Rosa" Edition" />
+        <h4>Dinheiro Blooms: The "Rosa" Edition</h4>
+      </div>
+    </div>
+
+    <div class="owl-carousel bouquet-slider mt-4">
+      <div class="bouquet-card" onclick="openProductModal('Celebration Mix','A bright mixed arrangement for celebrations.',360,'images/bouquet11.jpg')">
+        <img src="images/bouquet11.jpg" alt="Celebration Mix" />
+        <h4>Celebration Mix</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('White Orchid Beauty','Elegant orchid-inspired bouquet.',480,'images/bouquet12.jpg')">
+        <img src="images/bouquet12.jpg" alt="White Orchid Beauty" />
+        <h4>White Orchid Beauty</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Rose + Chocolate Combo','Perfect romantic combo gift.',520,'images/bouquet13.jpg')">
+        <img src="images/bouquet13.jpg" alt="Rose + Chocolate Combo" />
+        <h4>Rose + Chocolate Combo</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Blossom Jar','A cute jar arrangement ideal for desks.',220,'images/bouquet14.jpg')">
+        <img src="images/bouquet14.jpg" alt="Blossom Jar" />
+        <h4>Blossom Jar</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Petite Love Bag','Small but elegant floral gift bag.',250,'images/bouquet15.jpg')">
+        <img src="images/bouquet15.jpg" alt="Petite Love Bag" />
+        <h4>Petite Love Bag</h4>
+      </div>
+    </div>
+
+    <div class="owl-carousel bouquet-slider mt-4">
+      <div class="bouquet-card" onclick="openProductModal('The Velvet Romance','Deep red premium roses for the ultimate romantic gesture.',450,'images/bouquet16.jpg')">
+        <img src="images/bouquet16.jpg" alt="The Velvet Romance" />
+        <h4>The Velvet Romance</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Tuscan Sunbeam','Vibrant golden sunflowers mixed with yellow spray roses.',380,'images/bouquet17.jpg')">
+        <img src="images/bouquet17.jpg" alt="Tuscan Sunbeam" />
+        <h4>Tuscan Sunbeam</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Pastel Dreamscape','Soft blush peonies and lavender carnations.',520,'images/bouquet18.jpg')">
+        <img src="images/bouquet18.jpg" alt="Pastel Dreamscape" />
+        <h4>Pastel Dreamscape</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Midnight Orchid','Rare exotic purple orchids in a sleek arrangement.',650,'images/bouquet19.jpg')">
+        <img src="images/bouquet19.jpg" alt="Midnight Orchid" />
+        <h4>Midnight Orchid</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Crimson Luxe','Moody burgundy dahlias paired with ivory ranunculus.',580,'images/bouquet20.jpg')">
+        <img src="images/bouquet20.jpg" alt="Crimson Luxe" />
+        <h4>Crimson Luxe</h4>
+      </div>
+    </div>
+
+    <div class="owl-carousel bouquet-slider mt-4">
+      <div class="bouquet-card" onclick="openProductModal('Peachy Keen Delight','Warm apricot roses and coral gerberas.',340,'images/bouquet21.jpg')">
+        <img src="images/bouquet21.jpg" alt="Peachy Keen Delight" />
+        <h4>Peachy Keen Delight</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Wildflower Meadow','Whimsical blue delphiniums and South African proteas.',410,'images/bouquet22.jpg')">
+        <img src="images/bouquet22.jpg" alt="Wildflower Meadow" />
+        <h4>Wildflower Meadow</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('flora Serenity','A tall arrangement of fragrant white oriental lilies.',490,'images/bouquet23.jpg')">
+        <img src="images/bouquet23.jpg" alt="floral Serenity" />
+        <h4>floral Serenity</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Cotton Candy Clouds','Fluffy pink hydrangeas and white baby breath.',460,'images/bouquet24.jpg')">
+        <img src="images/bouquet24.jpg" alt="Cotton Candy Clouds" />
+        <h4>Cotton Candy Clouds</h4>
+      </div>
+
+      <div class="bouquet-card" onclick="openProductModal('Royal Rosetta','Bold roses styled with eucalyptus leaves.',550,'images/bouquet25.jpg')">
+        <img src="images/bouquet25.jpg" alt="Royal Rosetta" />
+        <h4>Royal Rosetta</h4>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+      <!-- =======================
+       BUILD YOUR OWN BOUQUET (REPLACED WITH GRID + QTY CONTROLS)
+      ======================== -->
+      <div class="site-section bg-light" id="build-bouquet">
+        <div class="container">
+          <div class="row mb-5 text-center">
+            <div class="col-md-12">
+              <h2 class="site-section-heading font-secondary">Build Your Own Bouquet</h2>
+              <p class="lead">Choose flowers, set stems, choose size, add finishing touches — price updates live.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Flowers grid with qty controls -->
+              <h3 class="step-title"><span class="icon-local_florist icon"></span> Step 1: Pick Your Flowers (set stems)</h3>
+              <div class="row" id="flowers-grid">
+                <div class="col-6 col-md-4 mb-3 flower-item" data-price="30" data-name="Roses">
+                  <div class="card p-2 text-center">
+                    <img src="images/stem1.jpg" class="img-fluid mb-2" style="height:100px; object-fit:contain;" />
+                    <h5 class="mb-1">Roses</h5>
+                    <div class="small text-muted mb-2">R30 per stem</div>
+                    <div class="d-flex justify-content-center align-items-center qty-controls">
+                      <button class="btn btn-sm btn-outline-secondary" data-action="decrement">−</button>
+                      <div class="mx-2 qty-value" style="min-width:32px; text-align:center;">0</div>
+                      <button class="btn btn-sm btn-outline-secondary" data-action="increment">+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-3 flower-item" data-price="20" data-name="Tulips">
+                  <div class="card p-2 text-center">
+                    <img src="images/stem2.jpg" class="img-fluid mb-2" style="height:100px; object-fit:contain;" />
+                    <h5 class="mb-1">Tulips</h5>
+                    <div class="small text-muted mb-2">R20 per stem</div>
+                    <div class="d-flex justify-content-center align-items-center qty-controls">
+                      <button class="btn btn-sm btn-outline-secondary" data-action="decrement">−</button>
+                      <div class="mx-2 qty-value" style="min-width:32px; text-align:center;">0</div>
+                      <button class="btn btn-sm btn-outline-secondary" data-action="increment">+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 mb-3 flower-item" data-price="25" data-name="Lilies">
+                  <div class="card p-2 text-center">
+                    <img src="images/stem3.jpg" class="img-fluid mb-2" style="height:100px; object-fit:contain;" />
+                    <h5 class="mb-1">Lilies</h5>
+                    <div class="small text-muted mb-2">R25 per stem</div>
+                    <div class="d-flex justify-content-center align-items-center qty-controls">
+                      <button class="btn btn-sm btn-outline-secondary" data-action="decrement">−</button>
+                      <div class="mx-2 qty-value" style="min-width:32px; text-align:center;">0</div>
+                      <button class="btn btn-sm btn-outline-secondary" data-action="increment">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Size -->
+              <h3 class="step-title mt-4"><span class="icon-resize_small icon"></span> Step 2: Bouquet Size</h3>
+              <div class="row" id="sizes-grid">
+                <div class="col-4">
+                  <div class="card p-2 text-center size-card" data-price="60" data-name="Small" role="button">
+                    <img src="images/small.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Small</h5>
+                    <div class="small text-muted">+ R60 base</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center size-card" data-price="120" data-name="Medium" role="button">
+                    <img src="images/medium.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Medium</h5>
+                    <div class="small text-muted">+ R120 base</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center size-card" data-price="200" data-name="Large" role="button">
+                    <img src="images/large.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Large</h5>
+                    <div class="small text-muted">+ R200 base</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Finish -->
+              <h3 class="step-title mt-4"><span class="icon-star icon"></span> Step 3: Add Finishing Touches</h3>
+              <div class="row" id="finish-grid">
+                <div class="col-4">
+                  <div class="card p-2 text-center finish-card" data-price="25" data-name="Ribbon Wrap" role="button">
+                    <img src="images/ribbon.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Ribbon Wrap</h5>
+                    <div class="small text-muted">+ R25</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center finish-card" data-price="40" data-name="Luxury Paper" role="button">
+                    <img src="images/lux_paper.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Luxury Paper</h5>
+                    <div class="small text-muted">+ R40</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card p-2 text-center finish-card" data-price="50" data-name="Gift Bag" role="button">
+                    <img src="images/gift_bag.jpg" class="img-fluid mb-2" style="height:80px; object-fit:contain;" />
+                    <h5 class="mb-1">Gift Bag</h5>
+                    <div class="small text-muted">+ R50</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+<h3 class="step-title mt-4"><span class="icon-gift icon"></span> Step 4: The Gifting Suite</h3>
+
+<p class="category-label">Sips & Spirits</p>
+<div class="row g-2 mb-4">
+  <div class="col-6 col-md-3 addon-card" data-price="150" data-name="Non-Alc Champagne">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/non-alc.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Non-Alc Champagne</h6>
+      <span class="gift-price">R150</span>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 addon-card" data-price="250" data-name="Fine Wine">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/wine.jpg" class="gift-img"></div>
+      <h6 class="gift-name">House Wine</h6>
+      <span class="gift-price">R250</span>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 addon-card" data-price="1200" data-name="Moët & Chandon">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/moet.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Moët Champagne</h6>
+      <span class="gift-price">R1200</span>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 addon-card" data-price="950" data-name="Hennessy VS">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/hennessy.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Hennessy VS</h6>
+      <span class="gift-price">R950</span>
+    </div>
+  </div>
+</div>
+
+<p class="category-label">Treats & Keepsakes</p>
+<div class="row g-2 mb-4">
+  <div class="col-6 col-md-3 addon-card" data-price="180" data-name="Ferrero Rocher Box">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/chocbox.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Ferrero Rocher Box</h6>
+      <span class="gift-price">R180</span>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 addon-card" data-price="150" data-name="Teddy Bear">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/teddy.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Teddy Bear</h6>
+      <span class="gift-price">R150</span>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 addon-card" data-price="450" data-name="Spa Gift Set">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/spa.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Spa Gift Set</h6>
+      <span class="gift-price">R450</span>
+    </div>
+  </div>
+</div>
+
+<p class="category-label">Atmosphere</p>
+<div class="row g-2 mb-4">
+  <div class="col-6 col-md-3 addon-card" data-price="45" data-name="Confetti">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/confetti.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Celebration Confetti</h6>
+      <span class="gift-price">R45</span>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 addon-card" data-price="350" data-name="Balloon Bouquet">
+    <div class="card gift-card-inner" role="button">
+      <div class="gift-img-container"><img src="images/addons/balloons.jpg" class="gift-img"></div>
+      <h6 class="gift-name">Balloon Bouquet</h6>
+      <span class="gift-price">R350</span>
+    </div>
+  </div>
+</div>
+
+
+            <!-- RIGHT COLUMN: preview + actions -->
+<div class="card shadow-sm border-0 p-3">
+    <h5 class="font-weight-bold mb-3">Your Bouquet Preview</h5>
+    
+    <div id="bouquet-summary-brief" class="mb-3 text-muted">
+        No stems selected yet.
+    </div>
+
+    <div class="bg-light p-3 rounded text-center mb-3">
+        <h3 class="mb-0 font-weight-bold text-primary">
+            R<span id="bouquet-total">0</span>
+        </h3>
+    </div>
+
+    <button id="btn-add-bouquet" class="btn btn-primary btn-block py-3 rounded-pill shadow-sm">
+        Add to Cart
+    </button>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      
+            <!-- remaining sections & footer (kept) -->
+      <div class="mt-5 block-cta-1 primary-overlay" style="background-image: url('images/hero_bg_2.png')">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+              <h2 class="mb-3 mt-0 text-white">Refer a friend, both get 10% off next order, use code LOVE10. </h2>
+              <p class="mb-0 text-white lead">Refer your friends and family to Lavéna Florist and get rewarded with a 10% discount on your next order!</p>
+            </div>
+            <div class="col-lg-4">
+              <p class="mb-0"><a href="contact.html" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contact Us</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Quick Links</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Products</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                  <h2 class="footer-heading mb-4">Features</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+<div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+  <h2 class="footer-heading mb-4">Follow Us</h2>
+  <div class="social-icons">
+    <a href="http://www.tiktok.com/@vilmar.m" target="_blank" class="pl-0 pr-3">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a href="https://www.instagram.com/lavena_florist?igsh=MXhtYTJ5ZW8wMzkwbQ==" target="_blank" class="pl-3 pr-3">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/vilma-m-929a2717a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="pl-3 pr-3">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+  </div>
+</div>
+
+            </div>
+            <div class="col-lg-3">
+              <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+              <p>Experience floral elegance delivered monthly. Join our list for curated updates, exclusive previews, and special member benefits.
+</p>
+              <form action="#" method="post" class="subscription">
+                <div class="input-group mb-3 d-flex align-items-stretch">
+                  <input type="text" class="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2" />
+                  <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row pt-5 mt-5">
+            <div class="col-12 text-md-center text-left">
+              <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by Mzimkhulu Kreatives <i class="icon icon-gift" aria-hidden="true"></i> For Lavena Florist</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bouquet Summary Modal -->
+    <div id="bouquetModal" class="bouquet-modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeBouquetBuilder()">&times;</span>
+        <h2>Your Bouquet Summary</h2>
+        <p><strong>Flowers:</strong> <span id="summary-flowers"></span></p>
+        <p><strong>Size:</strong> <span id="summary-size"></span></p>
+        <p><strong>Finishing Touch:</strong> <span id="summary-finish"></span></p>
+        <h3>Total: R<span id="summary-total"></span></h3>
+
+      </div>
+    </div>
+
+    <!-- Product View Modal -->
+    <div id="productModal" class="bouquet-modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeProductModal()">&times;</span>
+
+        <img id="product-image" src="" class="img-fluid mb-3" style="border-radius:12px;" />
+
+        <h2 id="product-title"></h2>
+        <p id="product-description" class="mb-4"></p>
+
+        <h3 class="mb-3">Price: R<span id="product-price"></span></h3>
+
+        <button class="btn btn-primary btn-pill btn-block mt-3" onclick="addToCartFromModal()">Add to Cart</button>
+
+      </div>
+    </div>
+
+    <!-- Cart Modal (with Delivery dropdown) -->
+    <div id="cartModal" class="bouquet-modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeCart()">&times;</span>
+
+    <h2 class="mb-4">Shopping Cart</h2>
+    
+    <div id="cart-items" class="mb-3"></div>
+
+    <hr>
+
+    <div class="delivery-section bg-light p-3" style="border-radius: 8px;">
+      <label for="delivery-area"><strong>1. Select Delivery Area:</strong></label>
+      <select id="delivery-area" onchange="updateDeliveryFee()" class="form-control mb-3">
+        <option value="0">Self Collection (Free)</option>
+        <option value="80">Pretoria – R80</option>
+        <option value="100">Johannesburg South – R100</option>
+        <option value="120">Johannesburg North – R120</option>
+      </select>
+
+      <label for="delivery-address"><strong>2. Delivery Address:</strong></label>
+      <textarea id="delivery-address" class="form-control" rows="2" placeholder="Street, Suburb, Postal Code..."></textarea>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <h4 class="mb-0">Total:</h4>
+      <h3 class="mb-0 text-primary">R<span id="cart-total">0</span></h3>
+    </div>
+
+    <button class="btn btn-primary btn-pill btn-block mt-4 py-3" onclick="proceedToCheckout()" style="font-size: 1.1rem; letter-spacing: 1px;">
+      PROCEED TO CHECKOUT
+    </button>
+    
+    <p class="text-center mt-2 small text-muted">Secure Payment Processing</p>
+  </div>
+</div>
+
+
+    <!-- jQuery + plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/main.js"></script> 
+
+    <script>
+      // --- TYPED EFFECT ---
+      var typed = new Typed('.typed-words', {
+        strings: ["Birthday", "Anniversary", "Graduation", " Wedding", "Valentine's Day", "Get Well Soon", "I 💓 You"],
+        typeSpeed: 80,
+        backSpeed: 80,
+        backDelay: 4000,
+        startDelay: 1000,
+        loop: true,
+        showCursor: true
+      });
+
+      // --- OWL CAROUSEL ---
+      $('.bouquet-slider').owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        responsive:{
+          0:{ items:2 },
+          600:{ items:3 },
+          1000:{ items:4 }
+        }
+      });
+    </script>
+
+<script>
+  // --- 1. GLOBAL STATE ---
+  let cart = [];
+  let currentProduct = {};
+  let deliveryFee = 0;
+
+  const bouquetState = {
+    flowers: [], 
+    size: null,
+    finish: null,
+    addons: []
+  };
+
+  // --- 2. INITIALIZATION ---
+  document.addEventListener('DOMContentLoaded', () => {
+    initHamburgerMenu();
+    initBouquetBuilder();
+    updateCartCount();
+    updateBouquetPreview();
+  });
+
+  // --- 3. GLOBAL UI FUNCTIONS (Attaching to window fixes the "not defined" errors) ---
+  
+  window.openProductModal = function(title, description, price, image) {
+    currentProduct = { title, description, price: parseInt(price), image };
+    const els = {
+      title: document.getElementById("product-title"),
+      desc: document.getElementById("product-description"),
+      price: document.getElementById("product-price"),
+      img: document.getElementById("product-image"),
+      modal: document.getElementById("productModal")
+    };
+    if (els.title) els.title.innerText = title;
+    if (els.desc) els.desc.innerText = description;
+    if (els.price) els.price.innerText = price;
+    if (els.img) els.img.src = image;
+    if (els.modal) els.modal.style.display = "flex";
+  };
+
+  window.closeProductModal = function() {
+    const modal = document.getElementById("productModal");
+    if (modal) modal.style.display = "none";
+  };
+
+  window.addToCartFromModal = function() {
+    if (!currentProduct.title) return;
+    cart.push({ ...currentProduct });
+    updateCartCount();
+    closeProductModal();
+    openCart();
+  };
+
+  window.openCart = function() {
+    renderCart();
+    const modal = document.getElementById("cartModal");
+    if (modal) modal.style.display = "flex";
+  };
+
+  window.closeCart = function() {
+    const modal = document.getElementById("cartModal");
+    if (modal) modal.style.display = "none";
+  };
+
+  window.removeCartItem = function(index) {
+    cart.splice(index, 1);
+    updateCartCount();
+    renderCart();
+  };
+
+  // --- 4. CORE LOGIC ---
+
+  function initHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger-icon');
+    const navMenu = document.getElementById('nav-menu');
+    if (hamburger && navMenu) {
+      hamburger.onclick = () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      };
+    }
+  }
+
+  function updateCartCount() {
+    const el = document.getElementById("cart-count");
+    if (el) {
+      el.innerText = cart.length;
+      el.style.display = cart.length > 0 ? "flex" : "none";
+    }
+  }
+
+  function renderCart() {
+    const container = document.getElementById("cart-items");
+    const totalEl = document.getElementById("cart-total");
+    if (!container) return;
+
+    let subtotal = 0;
+    let html = cart.length === 0 ? '<p class="text-center text-muted py-3">Your cart is empty.</p>' : '';
+
+    cart.forEach((item, idx) => {
+      subtotal += item.price;
+      html += `
+        <div class="d-flex justify-content-between border-bottom py-2 align-items-center">
+          <div style="text-align:left;">
+            <h6 class="mb-0"><strong>${item.title}</strong></h6>
+            <small class="text-muted">R${item.price}</small>
+          </div>
+          <button onclick="removeCartItem(${idx})" class="btn btn-sm text-danger" style="background:none; border:none; font-size:1.2rem;">&times;</button>
+        </div>`;
+    });
+
+    container.innerHTML = html;
+    if (totalEl) totalEl.innerText = subtotal + deliveryFee;
+  }
+
+  function initBouquetBuilder() {
+    document.querySelectorAll(".flower-item").forEach((item) => {
+      const flowerObj = { name: item.dataset.name, price: parseInt(item.dataset.price || 0), qty: 0 };
+      bouquetState.flowers.push(flowerObj);
+
+      const qtyDisplay = item.querySelector(".qty-value");
+      item.querySelectorAll("[data-action]").forEach(btn => {
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          if (btn.dataset.action === "increment") flowerObj.qty++;
+          else if (flowerObj.qty > 0) flowerObj.qty--;
+          if (qtyDisplay) qtyDisplay.innerText = flowerObj.qty;
+          updateBouquetPreview();
+        };
+      });
+    });
+
+    document.querySelectorAll(".addon-card, .size-card, .finish-card").forEach(card => {
+      card.onclick = () => {
+        const name = card.dataset.name;
+        const price = parseInt(card.dataset.price || 0);
+        const inner = card.querySelector('.card') || card;
+
+        if (card.classList.contains("addon-card")) {
+          const idx = bouquetState.addons.findIndex(a => a.name === name);
+          if (idx > -1) {
+            bouquetState.addons.splice(idx, 1);
+            inner.classList.remove("border-primary");
+          } else {
+            bouquetState.addons.push({ name, price });
+            inner.classList.add("border-primary");
+          }
+        } else {
+          const type = card.classList.contains("size-card") ? "size" : "finish";
+          const group = card.classList.contains("size-card") ? ".size-card" : ".finish-card";
+          document.querySelectorAll(`${group} .card`).forEach(c => c.classList.remove("border-primary"));
+          inner.classList.add("border-primary");
+          bouquetState[type] = { name, price };
+        }
+        updateBouquetPreview();
+      };
+    });
+
+    const addBtn = document.getElementById("btn-add-bouquet");
+    if (addBtn) addBtn.onclick = handleAddBouquetToCart;
+  }
+
+  function updateBouquetPreview() {
+    const listContainer = document.getElementById("bouquet-summary-brief");
+    const totalDisplay = document.getElementById("bouquet-total");
+    if (!listContainer || !totalDisplay) return;
+
+    let total = 0;
+    let html = "";
+
+    bouquetState.flowers.filter(f => f.qty > 0).forEach(f => {
+      html += `<div class="d-flex justify-content-between small"><span>${f.name} x${f.qty}</span><span>R${f.price * f.qty}</span></div>`;
+      total += (f.price * f.qty);
+    });
+
+    if (bouquetState.size) {
+      html += `<div class="d-flex justify-content-between small"><span>Size: ${bouquetState.size.name}</span><span>R${bouquetState.size.price}</span></div>`;
+      total += bouquetState.size.price;
+    }
+    if (bouquetState.finish) {
+      html += `<div class="d-flex justify-content-between small"><span>Wrap: ${bouquetState.finish.name}</span><span>R${bouquetState.finish.price}</span></div>`;
+      total += bouquetState.finish.price;
+    }
+    bouquetState.addons.forEach(a => {
+      html += `<div class="d-flex justify-content-between small"><span>${a.name}</span><span>R${a.price}</span></div>`;
+      total += a.price;
+    });
+
+    listContainer.innerHTML = html || "No stems selected yet.";
+    totalDisplay.innerText = total;
+  }
+
+  function handleAddBouquetToCart() {
+    const total = parseInt(document.getElementById("bouquet-total").innerText);
+    if (total <= 0) return alert("Select flowers first!");
+
+    // Build the description for the email/inventory later
+    let desc = bouquetState.flowers.filter(f => f.qty > 0).map(f => `${f.name} x${f.qty}`).join(", ");
+    if (bouquetState.size) desc += ` | Size: ${bouquetState.size.name}`;
+    if (bouquetState.finish) desc += ` | Wrap: ${bouquetState.finish.name}`;
+
+    cart.push({ title: "Custom Bouquet", price: total, description: desc });
+    updateCartCount();
+    openCart();
+    
+    // Reset
+    bouquetState.flowers.forEach(f => f.qty = 0);
+    bouquetState.addons = []; bouquetState.size = null; bouquetState.finish = null;
+    document.querySelectorAll(".qty-value").forEach(el => el.innerText = "0");
+    document.querySelectorAll(".border-primary").forEach(c => c.classList.remove("border-primary"));
+    updateBouquetPreview();
+  }
+</script>
+
+  </body>
+</html>
+
